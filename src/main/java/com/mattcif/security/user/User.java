@@ -1,6 +1,10 @@
 package com.mattcif.security.user;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +27,16 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @NotBlank(message = "não deve ser vazio")
+    @NotNull(message = "não deve ser nulo")
     private String firstName;
     private String lastName;
+
+    @Email
     private String email;
+
+    @Size(min = 8, max = 20)
     private String password;
 
     @Enumerated(EnumType.STRING)

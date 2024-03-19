@@ -1,6 +1,6 @@
 package com.mattcif.security.config;
 
-import jakarta.servlet.Filter;
+import com.mattcif.security.validation.EmailValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
